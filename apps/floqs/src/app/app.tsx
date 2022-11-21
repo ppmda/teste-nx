@@ -1,15 +1,18 @@
-import styled from 'styled-components';
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { exampleProducts } from '@test-partner/products';
+import { Banner } from '@test-partner/common-ui';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="floqs" />
-    </StyledApp>
+    <>
+      <Banner text="Welcome to the store!" />
+      <ul>
+        {exampleProducts.map((product) => (
+          <li key={product.id}>
+            <strong>{product.name}</strong> Price: {product.price}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
